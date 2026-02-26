@@ -5,7 +5,10 @@ from app.db.database import Base, engine
 from app.routes import auth, employees, attendance, dashboard
 
 # Create database tables
-Base.metadata.create_all(bind=engine)
+try:
+    Base.metadata.create_all(bind=engine)
+except Exception as e:
+    print(f"Warning: Could not create database tables on startup. Proceeding... error: {e}")
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -17,7 +20,7 @@ app = FastAPI(
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[settings.FRONTEND_URL, "http://localhost:3000", "http://localhost:5173", "http://localhost:5174","https://hrms-lite-e7g7.vercel.app"],
+    allow_origins=settings.cors_origins + ["http://localhost:3000", "http://localhost:5173", "http://localhost:5174", "https://hrms-lite-e7g7.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

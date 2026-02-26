@@ -18,6 +18,13 @@ class Settings(BaseSettings):
     # CORS
     FRONTEND_URL: str = "http://localhost:5173"
     
+    @property
+    def cors_origins(self) -> list[str]:
+        """Convert comma-separated strings to a list of origins."""
+        if not self.FRONTEND_URL:
+            return []
+        return [origin.strip() for origin in self.FRONTEND_URL.split(",") if origin.strip()]
+
     # Server
     DEBUG: bool = True
     
