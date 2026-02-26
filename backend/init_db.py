@@ -16,15 +16,14 @@ def create_admin_user():
     db = SessionLocal()
     try:
         # Check if admin already exists
-        admin = db.query(User).filter(User.email == "admin@example.com").first()
+        admin = db.query(User).filter(User.email == "admin@gmail.com").first()
         if admin:
             print("Admin user already exists.")
             return
 
         # Create admin user
         admin_user = User(
-            id=str(uuid.uuid4()),
-            email="admin@example.com",
+            email="admin@gmail.com",
             username="admin",
             hashed_password="$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewdBPjYQgGxMWL6e",  # password123
             full_name="System Administrator",
@@ -35,7 +34,7 @@ def create_admin_user():
         db.add(admin_user)
         db.commit()
         print("Default admin user created:")
-        print("Email: admin@example.com")
+        print("Email: admin@gmail.com")
         print("Password: password123")
         print("Role: admin")
 
