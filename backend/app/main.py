@@ -43,7 +43,22 @@ def read_root():
     }
 
 
+from sqlalchemy import text
+from app.db.database import SessionLocal
+
 @app.get("/health")
 def health_check():
-    """Health check endpoint."""
-    return {"status": "healthy"}
+    """Health check endpoint with database connectivity test."""
+    db_status = "unknown"
+    try:
+        db = SessionLocal()
+        db.execute(text("SELECT 1"))
+        db_status = "connected"
+        db.close()
+    except Exception as e:
+        db_status = f"unreachable: {str(e)}"
+    
+    return {
+        "status": "healthy" if db_status == "connected" else "degraded",
+        "database": db_status
+    }

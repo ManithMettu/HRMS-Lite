@@ -4,7 +4,7 @@ from app.core.config import settings
 
 # Create database engine
 engine = create_engine(
-    settings.DATABASE_URL,
+    settings.sqlalchemy_database_url,
     echo=settings.DEBUG,
     pool_pre_ping=True,
     pool_size=10,
