@@ -1,0 +1,1 @@
+"""HRMS FastAPI application package."""
