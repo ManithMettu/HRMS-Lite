@@ -2,6 +2,11 @@
 
 A comprehensive, mobile-responsive Human Resource Management System built for modern organizations. This project features a robust FastAPI backend with PostgreSQL and a premium React-based frontend.
 
+## 🔗 Deployment Links
+- **Frontend**: [https://hrms-lite-e7g7.vercel.app](https://hrms-lite-e7g7.vercel.app)
+- **Backend API**: [https://hrms-lite-zeta-ten.vercel.app](https://hrms-lite-zeta-ten.vercel.app)
+- **GitHub Repository**: [https://github.com/ManithMettu/HRMS-Lite.git](https://github.com/ManithMettu/HRMS-Lite.git)
+
 ## 🚀 Tech Stack
 
 ### Frontend
