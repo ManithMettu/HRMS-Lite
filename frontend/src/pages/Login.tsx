@@ -91,16 +91,7 @@ const Login: React.FC = () => {
                 />
               </div>
 
-              {/* Remember Me */}
-              <div className="flex items-center justify-between pt-2">
-                <label className="flex items-center gap-2 cursor-pointer text-sm">
-                  <input type="checkbox" className="w-4 h-4 rounded border-gray-300" />
-                  <span>Remember me</span>
-                </label>
-                <Button variant="link" size="sm" className="h-auto p-0 font-normal">
-                  Forgot password?
-                </Button>
-              </div>
+
 
               {/* Submit Button */}
               <Button type="submit" disabled={isLoading} className="w-full mt-6">
@@ -114,7 +105,7 @@ const Login: React.FC = () => {
               <p className="text-xs text-muted-foreground text-center mb-3">Demo Credentials:</p>
               <div className="bg-muted p-3 rounded-lg text-center space-y-1">
                 <p className="text-xs">
-                  <strong>Email:</strong> admin@example.com
+                  <strong>Email:</strong> admin@gmail.com
                 </p>
                 <p className="text-xs">
                   <strong>Password:</strong> password123
