@@ -106,6 +106,9 @@ This project is configured for easy deployment on **Vercel**.
 - **Environment Variables**: When deploying, ensure you add `DATABASE_URL`, `SECRET_KEY`, and other `.env` variables in the Vercel Dashboard.
 - **Build Command**: Vercel handles Python dependencies via `requirements.txt` automatically.
 
+### Render (Backend Troubleshooting)
+- **Python Version**: If the build fails with `pydantic-core` errors on Python 3.14, ensure you set the Environment Variable `PYTHON_VERSION` to `3.11.9` in the Render dashboard. A `runtime.txt` is also provided at the root to assist with high-level version detection.
+
 ### Frontend (React)
 - **Configuration**: Uses `frontend/vercel.json` to handle SPA routing (rewriting to `index.html`).
 - **Environment Variables**: Add `VITE_API_URL` pointing to your deployed Backend URL.
