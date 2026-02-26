@@ -94,3 +94,18 @@ A comprehensive, mobile-responsive Human Resource Management System built for mo
 - **Dynamic Attendance**: Real-time hours calculation and status management.
 - **Secure Auth**: Token rotation and protected routes.
 - **Reporting**: Weekly attendance charts and organizational stats.
+
+---
+
+## ☁️ Deployment (Vercel)
+
+This project is configured for easy deployment on **Vercel**.
+
+### Backend (FastAPI)
+- **Configuration**: Uses `backend/vercel.json` to route all requests to the FastAPI app.
+- **Environment Variables**: When deploying, ensure you add `DATABASE_URL`, `SECRET_KEY`, and other `.env` variables in the Vercel Dashboard.
+- **Build Command**: Vercel handles Python dependencies via `requirements.txt` automatically.
+
+### Frontend (React)
+- **Configuration**: Uses `frontend/vercel.json` to handle SPA routing (rewriting to `index.html`).
+- **Environment Variables**: Add `VITE_API_URL` pointing to your deployed Backend URL.
