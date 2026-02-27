@@ -108,7 +108,7 @@ const Login: React.FC = () => {
                   <strong>Email:</strong> admin@gmail.com
                 </p>
                 <p className="text-xs">
-                  <strong>Password:</strong> password123
+                  <strong>Password:</strong> Password123
                 </p>
               </div>
             </div>
